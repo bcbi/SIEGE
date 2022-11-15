@@ -1,0 +1,13 @@
+# Vim files
+*.swp
+
+# Julia files
+julia-*
+*.so
+Manifest.toml
+
+# Generated directories
+depot/
+
+# Mac directories
+.DS_Store
