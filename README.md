@@ -6,7 +6,7 @@
 Julia's package manager relies on internet access, so it can be challenging to make dependencies available on secure systems.
 One solution is to use containers, but the issue can also be solved within Julia.
 [PackageCompiler.jl](https://github.com/JuliaLang/PackageCompiler.jl) compiles Julia code ahead of time, primarily for [improved performance in certain workflows](https://julialang.github.io/PackageCompiler.jl/dev/index.html#PackageCompiler).
-In particular, [generating a sysimage](https://julialang.github.io/PackageCompiler.jl/dev/sysimages.html) produces a performant stand-alone Julia session, and since its [main drawback (version locking)](https://julialang.github.io/PackageCompiler.jl/dev/sysimages.html#Drawbacks-to-custom-sysimages) is mitigated on secure systems, it seems to be the best approach for putting a Julia session on a system without internet access.
+In particular, [generating a sysimage](https://julialang.github.io/PackageCompiler.jl/dev/sysimages.html) produces a performant stand-alone Julia session, and since its [main drawback (version locking)](https://julialang.github.io/PackageCompiler.jl/dev/sysimages.html#Drawbacks-to-custom-sysimages) is mitigated on secure systems, it seems to be the best approach for putting a Julia session on a system without internet or `ssh` access available to users.
 
 [SIEGE](https://github.com/bcbi/SIEGE) takes a Julia project as input and automatically generates a sysimage (using PackageCompiler) for use in secure systems.
 It also includes a Bash script that starts an offline Julia session with the new sysimage.
