@@ -55,4 +55,5 @@ If required dependencies are left out, these can be added manually:
 2. Some packages might just not be relocatable yet and would need to be patched.
 
 ## Related
+- [Secure systems: an alternate use case for PackageCompiler.jl](https://discourse.julialang.org/t/secure-systems-an-alternate-use-case-for-packagecompiler-jl/90955?u=ashlin_harris)
 - [Installing packages via an SSH SOCKS proxy on a compute cluster](https://discourse.julialang.org/t/installing-packages-via-an-ssh-socks-proxy-on-a-compute-cluster/71735?u=ashlin_harris)
