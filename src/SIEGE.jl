@@ -5,23 +5,7 @@ export main
 using Pkg
 using PackageCompiler
 
-function main(path=pwd(), check=true)
-
-	# Compiler check
-	if check
-		@info("Performing compiler check.\nRun with check=false to disable this compiler check")
-		# Assuming compiler is gcc
-		versionStatement = read(`gcc --version`, String)
-		version = match(r"\d*?\.\d*?\.\d*", versionStatement)
-		if isnothing(version)
-			@error("Could not determine compiler version!")
-		elseif VersionNumber(version.match) < v"9.0"
-			@error("No compatable gCC version found!\n(At minimum v9.0 is required)", version.match)
-			return
-		else
-			@info("Compatable gCC version found:", version.match)
-		end
-	end
+function main( path = pwd() )
 
 	# Set paths
 	parent_directory = path
