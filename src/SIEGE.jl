@@ -65,6 +65,10 @@ function main(path=pwd(), check=true)
 		include_transitive_dependencies=true,
 	)
 
+	# Delete compiled and logs from local depot
+	rm(joinpath(my_depot, "compiled"), recursive=true, force=true)
+	rm(joinpath(my_depot, "logs"), recursive=true, force=true)
+
 	return
 end
 
