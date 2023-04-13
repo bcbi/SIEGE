@@ -29,8 +29,9 @@ An example Julia project space is already included in `env/`.
 Additionally, the instructions and code presuppose a *NIX type environment with Bash, but a port for Windows should be possible.
 
 ## Instructions:
-1. Read through `src/SIEGE.jl`, making changes as needed. The path to SIEGE should be modified within `run_sysimage.sh`.
-1. Run `main()` from `src/SIEGE.jl` on the build server to build the sysimage and depot. Any generated files will be found in `build/`.
+1. Read through `src/SIEGE.jl`, making changes as needed.
+2. The paths to Julia and SIEGE should be updated in `run_sysimage.sh`.
+3. Run `main()` from `src/SIEGE.jl` on the build server to build the sysimage and depot. Any generated files will be found in `build/`.
 
 ```
 pkg> activate --temp
@@ -39,9 +40,9 @@ julia> using SIEGE
 julia> main("/Path/To/SIEGE")
 ```
 
-2. Upload the package directory to the secure system.
+4. Upload Julia and SIEGE to the secure system.
 5. Users can now use `run_sysimage.sh`. Group and permisson settings might need to be adjusted with `chgroup` and `chmod`, since many files need to be executable by users.
-5. (OPTIONAL): Add to `~/.bashrc` an alias pointing to the script. It should accept command line arguments just as the Julia binary would.
+6. (OPTIONAL): Add to `~/.bashrc` an alias pointing to the script. It should accept command line arguments just as the Julia binary would.
 ```
 alias julia='Path/To/run_sysimage.sh'
 ```
