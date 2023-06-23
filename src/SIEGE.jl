@@ -63,8 +63,6 @@ function main( path = pwd() )
 	# Delete local files from build depot
 	rm(joinpath(my_depot, "compiled"), recursive = true, force = true)
 	rm(joinpath(my_depot, "logs"), recursive = true, force = true)
-	rm(joinpath(my_depot, "registries", "General.tar.gz"), force = true)
-	rm(joinpath(my_depot, "registries", "General.toml"), force = true)
 
 	return
 end
