@@ -7,7 +7,7 @@ julia-*
 Manifest.toml
 
 # Generated directories
-depot/
+build/
 
 # Mac directories
 .DS_Store

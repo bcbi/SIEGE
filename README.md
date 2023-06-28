@@ -29,8 +29,9 @@ An example Julia project space is already included in `env/`.
 Additionally, the instructions and code presuppose a *NIX type environment with Bash, but a port for Windows should be possible.
 
 ## Instructions:
-1. Read through `src/SIEGE.jl`, making changes as needed.
-2. The paths to Julia and SIEGE should be updated in `run_sysimage.sh`.
+0. Read through `src/SIEGE.jl` to see what's going on.
+1. Replace the example project file in `env/` with the one you want to build into a sysimage.
+2. While you're at it, go ahead and update the paths to Julia and SIEGE in `run_sysimage.sh`.
 3. Run `main()` from `src/SIEGE.jl` on the build server to build the sysimage and depot. Any generated files will be found in `build/`.
 
 ```
