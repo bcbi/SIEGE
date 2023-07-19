@@ -40,16 +40,6 @@ function main( path = pwd() )
 	do_not_include = ["PackageCompiler","SIEGE"]
 	package_list = filter(x -> x ∉ do_not_include, all_packages)
 
-	# Generate precompile file from package tests
-	precompile_file = tempname()
-	for package in package_list
-		write(precompile_file, "import $package\n")
-	end
-	write(precompile_file, "\n")
-	for package in package_list
-		write(precompile_file, "include(joinpath(pkgdir($package), \"test\", \"runtests.jl\"))\n")
-	end
-
 	# Create sysimage 
 	create_sysimage(package_list;
 		sysimage_path = my_sysimage,
@@ -57,7 +47,6 @@ function main( path = pwd() )
 		incremental = true,
 		filter_stdlibs = false,
 		include_transitive_dependencies = true,
-		precompile_execution_file = precompile_file,
 	)
 
 	# Delete local files from build depot
