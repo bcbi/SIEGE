@@ -20,10 +20,13 @@ They are not modified in any way by SIEGE,
 so this only needs to be done by the developer once, or whenever a new version of Julia is needed.
 The same version of Julia should be used to generate the sysimage.
 
-__Manifest__: Copy the Manifest file from your Julia projet into `env/`.
-This machine-generated manifest file is what is actually used by PackageCompiler.jl,
-so the build server and secure server must be as similar as possible.
+__A Julia Project__: Copy the Project file from your Julia projet into `env/`.
 An example Julia project space is already included in `env/`.
+
+Note that the sysimage produced by SIEGE will only work on systems with matching architecture,
+since the machine-generated manifest file is what is actually used by PackageCompiler.jl.
+If the sysimage is intended to be moved to a secure server,
+the build server and secure server must be as similar as possible.
 
 Additionally, the instructions and code presuppose a *NIX type environment with Bash, but a port for Windows should be possible.
 
