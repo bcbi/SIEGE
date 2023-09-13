@@ -28,20 +28,8 @@ function main( path = pwd() )
 
 	run(setenv(`$(Base.julia_cmd()) -e "import Pkg; Pkg.instantiate(); Pkg.precompile()"`, new_environment))
 
-	# Get all packages from Project.toml
-	all_packages = String[]
-	for (uuid, dep) in Pkg.dependencies()
-		dep.is_direct_dep || continue
-		dep.version === nothing && continue
-		push!(all_packages,dep.name)
-	end
-
-	# Remove unneeded packages
-	do_not_include = ["PackageCompiler","SIEGE"]
-	package_list = filter(x -> x ∉ do_not_include, all_packages)
-
 	# Create sysimage 
-	create_sysimage(package_list;
+	create_sysimage(String[];
 		sysimage_path = my_sysimage,
 		project = project_directory,
 		incremental = true,
