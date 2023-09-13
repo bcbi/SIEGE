@@ -1,12 +1,10 @@
 name = "BCBI Project"
 authors = ["Ashlin Harris <ashlin_harris@brown.edu>"]
-version = "0.2.0"
+version = "0.3.0"
 
 [deps]
 CSV = "336ed68f-0bac-5ca0-87d4-7b16caf5d00b"
 DataFrames = "a93c6f00-e57d-5684-b7b6-d8193f3e46c0"
-MKL = "33e6dc65-8f57-5167-99aa-e5a354878fb2"
-MLJ = "add582a8-e3ab-11e8-2d5e-e98b27df1bc7"
 PackageCompiler = "9b87118b-4619-50d2-8e1e-99f35a4d4d9d"
 Plots = "91a5bcdd-55d7-5caf-9e0b-520d859cae80"
 XLSX = "fdbf4ff8-1666-58a4-91e7-1b58723a45e0"
